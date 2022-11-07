@@ -8,19 +8,23 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
   </head>
 
-  <body><%= render "layouts/navbar" %>
-    <div class="<%= @page %> -page"></div>
+  <body>
+    <div class="<%= @page %>-page">
       <div class="row page-container">
-          <%= render 'layouts/links' %>
-          <div class="col-8">
-              <% unless @page == "home" %>
-                  <%= render 'layouts/title' %>
-              <% end %>
-            <%= yield %>
-          </div>
-          <div class="col-2"></div>
+        <%= render 'layouts/links' %>
+        <div class="col-8">
+          <% unless @page == "home" %>
+            <%= render 'layouts/title' %>
+          <% end %>
+          <%= yield %>
+        </div>
+        <div class="col-2"></div>
+      </div>
     </div>
   </body>
 </html>

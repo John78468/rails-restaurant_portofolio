@@ -13,7 +13,7 @@ User.create!(email:'admin@hotmail.fr',
               admin: true)
 puts "creation pizzas"
 
-25.times do |i|
+25.times do |i|•••••••
     Product.create!(
       name: "Pizza classique",
       description: "Lorem ispum",
