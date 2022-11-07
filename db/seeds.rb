@@ -16,7 +16,7 @@ puts "creation pizzas"
 25.times do |i|
     Product.create!(
       name: "Pizza classique",
-      decription: "Lorem ispum",
+      description: "Lorem ispum",
       price: 11.99,
       catering: true
     )
