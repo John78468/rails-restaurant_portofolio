@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search', to: "menu#search"
+  resources :categories
   get 'menu', to: "menus#index"
   resources :products
   devise_for :users
