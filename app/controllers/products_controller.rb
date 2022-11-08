@@ -22,6 +22,8 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
+    @product.category = Category.find(params[:product][:category_id])
+
 
     respond_to do |format|
       if @product.save
@@ -36,6 +38,7 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
+    @product.category = Category.find(params[:product][:category_id])
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
@@ -65,6 +68,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, :dairy_free, :gluten_free, :kosher, :peanut_free, :vegan, :vegetarian, :available, :catering, :featured)
+      params.require(:product).permit(:name, :description, :price, :image, :category_id, :dairy_free, :gluten_free, :kosher, :peanut_free, :vegan, :vegetarian, :available, :catering, :featured)
     end
 end
