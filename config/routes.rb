@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'search', to: "menu#search"
+  get 'search', to: "menus#search"
   resources :categories
   get 'menu', to: "menus#index"
   resources :products

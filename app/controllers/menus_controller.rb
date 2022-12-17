@@ -3,6 +3,7 @@ class MenusController < ApplicationController
   def index
     @products = Product.all
     @page = "menu"
+
   end
 
   def search
